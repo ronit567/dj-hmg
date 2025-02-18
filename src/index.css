@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-black font-inter;
+}
+
+section {
+  scroll-margin-top: 2rem;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes glitchText {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(217, 119, 6, 0.75),
+                -0.05em -0.025em 0 rgba(255, 255, 255, 0.75),
+                -0.025em 0.05em 0 rgba(0, 0, 0, 0.75);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 rgba(217, 119, 6, 0.75),
+                -0.05em -0.025em 0 rgba(255, 255, 255, 0.75),
+                -0.025em 0.05em 0 rgba(0, 0, 0, 0.75);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(217, 119, 6, 0.75),
+                0.025em 0.025em 0 rgba(255, 255, 255, 0.75),
+                -0.05em -0.05em 0 rgba(0, 0, 0, 0.75);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(217, 119, 6, 0.75),
+                0.025em 0.025em 0 rgba(255, 255, 255, 0.75),
+                -0.05em -0.05em 0 rgba(0, 0, 0, 0.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(217, 119, 6, 0.75),
+                0.05em 0 0 rgba(255, 255, 255, 0.75),
+                0 -0.05em 0 rgba(0, 0, 0, 0.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(217, 119, 6, 0.75),
+                0.05em 0 0 rgba(255, 255, 255, 0.75),
+                0 -0.05em 0 rgba(0, 0, 0, 0.75);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 rgba(217, 119, 6, 0.75),
+                -0.025em -0.025em 0 rgba(255, 255, 255, 0.75),
+                -0.025em -0.05em 0 rgba(0, 0, 0, 0.75);
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(
+    45deg,
+    rgba(217, 119, 6, 0.1) 0%,
+    rgba(0, 0, 0, 0.2) 25%,
+    rgba(217, 119, 6, 0.1) 50%,
+    rgba(0, 0, 0, 0.2) 75%,
+    rgba(217, 119, 6, 0.1) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+.booking-form-bg {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(38, 38, 38, 0.9) 25%,
+    rgba(0, 0, 0, 0.95) 50%,
+    rgba(38, 38, 38, 0.9) 75%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  backdrop-filter: blur(10px);
+}
+
+.glow-effect {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.glitch-title {
+  position: relative;
+  animation: glitchText 3s infinite linear alternate-reverse;
+  background: linear-gradient(to right, #ffffff, #b45309);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 2rem rgba(217, 119, 6, 0.3));
+}
+
+.cyberpunk-text {
+  text-shadow: 0 0 10px rgba(217, 119, 6, 0.5),
+               0 0 20px rgba(217, 119, 6, 0.3),
+               0 0 30px rgba(217, 119, 6, 0.2);
+  letter-spacing: 0.15em;
+}
+
+.typing-effect-1, .typing-effect-2 {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  border-right: 2px solid transparent;
+  display: inline-block;
+  position: relative;
+  height: 1.2em;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.typing-effect-1 {
+  animation: typing 3s ease-out forwards;
+}
+
+.typing-effect-2 {
+  animation: typing 3s ease-out 3.5s forwards;
+}
+
+.animate-slide-right {
+  animation: slide-right 3s linear infinite;
+}
+
+.animate-slide-left {
+  animation: slide-left 3s linear infinite;
+}
+
+.animate-slide-down {
+  animation: slide-down 3s linear infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 3s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
